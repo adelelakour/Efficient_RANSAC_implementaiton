@@ -195,11 +195,11 @@ std::unordered_map<Eigen::Vector3f, Cell> Compute_HashTable()
                     PairofPoints.second = V_XYZNorm;
 
                     auto it = myHashTable[Hash_key];
-                    get<0>(it).push_back(PairofPoints);
-                    auto Model_in_List = std::find(get<1>(it).begin(), get<1>(it).end(), Model_Name);
-                    if (Model_in_List == get<1>(it).end())
+                    std::get<0>(it).push_back(PairofPoints);
+                    auto Model_in_List = std::find(std::get<1>(it).begin(), std::get<1>(it).end(), Model_Name);
+                    if (Model_in_List == std::get<1>(it).end())
                     {
-                        get<1>(it).push_back(Model_Name);
+                        std::get<1>(it).push_back(Model_Name);
                     } else
                     {
 
@@ -219,7 +219,7 @@ std::unordered_map<Eigen::Vector3f, Cell> Compute_HashTable()
     for (auto entity : myHashTable)
     {
         auto Cell = entity.second;
-        if (get<0>(Cell).size()  > 2)
+        if (std::get<0>(Cell).size()  > 2)
         {
             std::cout << "I found big cell" << std::endl;
         }
