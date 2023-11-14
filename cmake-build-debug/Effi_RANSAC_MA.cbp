@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Effi_RANSAC_MA"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\pcl-1.13\;CMake Files\..\..\..\..\usr\local\share\pcl-1.13\Modules\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\eigen3\;CMake Files\..\..\..\..\usr\share\eigen3\cmake\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_iostreams-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qhull\;CMake Files\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Effi_RANSAC_MA">
+				<Option output="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Effi_RANSAC_MA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DEIGEN_HAS_CXX17_OVERALIGN=0"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_IOSTREAMS_DYN_LINK"/>
+					<Add option="-DBOOST_SERIALIZATION_DYN_LINK"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/local/include/pcl-1.13"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 Effi_RANSAC_MA"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Effi_RANSAC_MA/fast">
+				<Option output="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Effi_RANSAC_MA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DEIGEN_HAS_CXX17_OVERALIGN=0"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_IOSTREAMS_DYN_LINK"/>
+					<Add option="-DBOOST_SERIALIZATION_DYN_LINK"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/local/include/pcl-1.13"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 Effi_RANSAC_MA/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/adelelakour/CLionProjects/Effi_RANSAC_MA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/Model_PreProsessing.cpp">
+			<Option target="Effi_RANSAC_MA"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/Model_PreProsessing.h">
+			<Option target="Effi_RANSAC_MA"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/main.cpp">
+			<Option target="Effi_RANSAC_MA"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/local/share/pcl-1.13/PCLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.13\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/local/share/pcl-1.13/PCLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.13\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/local/share/pcl-1.13/Modules/FindFLANN.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.13\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/local/share/pcl-1.13/Modules/FindOpenMP.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.13\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/local/share/pcl-1.13/Modules/FindPcap.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.13\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/local/share/pcl-1.13/Modules/FindQhull.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.13\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/local/share/pcl-1.13/Modules/Findlibusb.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.13\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/share/eigen3/cmake/Eigen3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/share/eigen3/cmake/Eigen3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/share/eigen3/cmake/Eigen3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/share/eigen3/cmake/UseEigen3.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.74.0.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/boost_system-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/boost_system-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/libboost_system-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/libboost_system-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/boost_filesystem-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/boost_filesystem-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/libboost_filesystem-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/libboost_filesystem-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_iostreams-1.74.0/boost_iostreams-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_iostreams-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_iostreams-1.74.0/boost_iostreams-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_iostreams-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_iostreams-1.74.0/libboost_iostreams-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_iostreams-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_iostreams-1.74.0/libboost_iostreams-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_iostreams-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/boost_serialization-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/boost_serialization-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/libboost_serialization-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/libboost_serialization-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/Qhull/QhullConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qhull\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/Qhull/QhullConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qhull\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/Qhull/QhullTargets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qhull\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/x86_64-linux-gnu/cmake/Qhull/QhullTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qhull\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/VTKTargets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/VTKTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkChartsCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonColor.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonComputationalGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonDataModel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonExecutionModel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonMath.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonMisc.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonSystem.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonTransforms.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkDICOMParser.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersExtraction.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersGeneral.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersHybrid.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersModeling.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersSources.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersStatistics.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOImage.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOLegacy.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOPLY.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOXML.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOXMLParser.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingColor.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingFourier.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingGeneral.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingHybrid.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingSources.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkInfovisCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkInteractionImage.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkInteractionStyle.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkInteractionWidgets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkMetaIO.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingAnnotation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingContext2D.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingContextOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingFreeType.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingLOD.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingVolume.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkUtilitiesEncodeString.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkViewsContext2D.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkViewsCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkalglib.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkexpat.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkfreetype.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkglew.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkjpeg.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkkwiml.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkpng.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtksys.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtktiff.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/adelelakour/CLionProjects/Effi_RANSAC_MA/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkzlib.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
