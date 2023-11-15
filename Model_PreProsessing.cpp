@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <utility>
 #include <vector>
+#include <set>
 #include <list>
 #include<tuple>
 #include <string>
@@ -56,8 +57,8 @@ double angleDegrees;
 
 
 typedef std::pair<pcl::PointXYZLNormal, pcl::PointXYZLNormal> PAIR;
-typedef std::vector<PAIR> Vec_of_Pairs;
-typedef std::tuple <Vec_of_Pairs, std::list<std::string>> Cell;
+typedef std::tuple <std::vector<PAIR>, std::set<std::string>> Cell;
+
 
 double Angle_Two_Vectors(Eigen::Vector3f Vector_A, Eigen::Vector3f Vector_B)
 {
@@ -108,7 +109,6 @@ inline Eigen::Vector3f V_sub_U (Eigen::Vector3f A, Eigen::Vector3f B)
 std::unordered_map<Eigen::Vector3f, Cell> Compute_HashTable()
 {
 
-    std::pair<pcl::PointXYZLNormal, pcl::PointXYZLNormal> PairofPoints = {pcl::PointXYZLNormal(), pcl::PointXYZLNormal()};
     std::unordered_map<Eigen::Vector3f, Cell> myHashTable;       // Cell is a tuple of (pair) and (model Name)
     myHashTable.clear();
 
@@ -122,7 +122,7 @@ std::unordered_map<Eigen::Vector3f, Cell> Compute_HashTable()
     Eigen::Vector3f U_p = Eigen::Vector3f::Zero();
     Eigen::Vector3f V_p = Eigen::Vector3f::Zero();
 
-
+    PAIR Detected_pairs;
     float radius {0.01};
     Cell OneCell;
 
@@ -146,12 +146,12 @@ std::unordered_map<Eigen::Vector3f, Cell> Compute_HashTable()
         pcl::io::loadPLYFile(file_path, *Model_Cloud);
 
         std::cout << "size before voxelgrid : " << Model_Cloud->size() << std:: endl;
-/*
+
         pcl::VoxelGrid<pcl::PointXYZLNormal> sor;
         sor.setInputCloud (Model_Cloud);
-        sor.setLeafSize (0.001f, 0.001f, 0.001f);
+        sor.setLeafSize (0.003f, 0.003f, 0.003f);
         sor.filter (*Model_Cloud);
-        std::cout << "size after voxelgrid  : " << Model_Cloud->size() << std:: endl;*/
+        std::cout << "size after voxelgrid  : " << Model_Cloud->size() << std:: endl;
 
         std::cout << "A new Model is loaded" << std::endl;
 
@@ -189,23 +189,23 @@ std::unordered_map<Eigen::Vector3f, Cell> Compute_HashTable()
                     Hash_key[1] = Angle_Two_Vectors(U_n, Pv_Pu);
                     Hash_key[2] = Angle_Two_Vectors(V_n, Pu_Pv);
 
+                    Detected_pairs.first = U_XYZNorm;
+                    Detected_pairs.second = V_XYZNorm;
 
-                    for (const auto &entry : myHashTable)
-                    PairofPoints.first = U_XYZNorm;
-                    PairofPoints.second = V_XYZNorm;
-
-                    auto it = myHashTable[Hash_key];
-                    std::get<0>(it).push_back(PairofPoints);
-                    auto Model_in_List = std::find(std::get<1>(it).begin(), std::get<1>(it).end(), Model_Name);
-                    if (Model_in_List == std::get<1>(it).end())
+                    if (myHashTable.find(Hash_key) != myHashTable.end())
                     {
-                        std::get<1>(it).push_back(Model_Name);
-                    } else
-                    {
-
+                        std::get<0> (myHashTable[Hash_key]).push_back(Detected_pairs);
+                        std::get<1> (myHashTable[Hash_key]).insert(Model_Name);
+                        std::cout << "A new entry is added to existing key:" << std::endl;
                     }
-
-                    std::cout << "Hash element is added :" << std::endl;
+                    else
+                    {
+                        Cell newData;
+                        std::get<0>(newData).push_back(Detected_pairs);
+                        std::get<1>(newData).insert(Model_Name);
+                        myHashTable[Hash_key] = newData;
+                        std::cout << "A new key is added :" << std::endl;
+                    }
 
                     //break;
                 }
