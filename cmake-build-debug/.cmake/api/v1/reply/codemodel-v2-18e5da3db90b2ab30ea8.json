@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Effi_RANSAC_MA",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Effi_RANSAC_MA::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Effi_RANSAC_MA-Debug-0425dc1c65c43ce6d6e5.json",
+					"name" : "Effi_RANSAC_MA",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ObjectModel::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ObjectModel-Debug-58421d0d89e7c187e12c.json",
+					"name" : "ObjectModel",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TestBla::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TestBla-Debug-bea5a950719b8d621d41.json",
+					"name" : "TestBla",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug",
+		"source" : "/home/adelelakour/CLionProjects/Efficient_RANSAC_implementation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

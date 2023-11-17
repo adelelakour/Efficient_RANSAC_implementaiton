@@ -27,28 +27,38 @@
 #include <pcl/segmentation/segment_differences.h>
 #include <pcl/registration/correspondence_estimation.h>
 
-#include <AndreiUtils/utilsString.h>
-
-using namespace AndreiUtils;
+//#include <AndreiUtils/utilsString.h>
+//using namespace AndreiUtils;
 using namespace Eigen;
 using namespace std;
 namespace fs = std::filesystem;
 
-Eigen::Vector3f fromStringToVectorF(std::string const &vectorAsString) {
+/*Eigen::Vector3f fromStringToVectorF(std::string const &vectorAsString) {
     auto res = AndreiUtils::splitString(vectorAsString, ";");
     assert(res.size() == 3);
     return {std::stof(res[0]), std::stof(res[1]), std::stof(res[2])};
+}*/
+
+std::vector<int> stringToVector(const std::string& str) {
+    std::vector<int> vec;
+    std::stringstream ss(str);
+    int temp;
+    while (ss >> temp) {
+        vec.push_back(temp);
+    }
+    return vec;
 }
+
 
 std::string fromVectorToString(Eigen::Vector3d const &vector) {
     return std::to_string(vector.x()) + ";" + std::to_string(vector.y()) + ";" + std::to_string(vector.z());
 }
 
-Eigen::Vector3d fromStringToVectorD(std::string const &vectorAsString) {
+/*Eigen::Vector3d fromStringToVectorD(std::string const &vectorAsString) {
     auto res = AndreiUtils::splitString(vectorAsString, ";");
     assert(res.size() == 3);
     return {std::stod(res[0]), std::stod(res[1]), std::stod(res[2])};
-}
+}*/
 
 std::string fromVectorToString(Eigen::Vector3f const &vector) {
     return std::to_string(vector.x()) + ";" + std::to_string(vector.y()) + ";" + std::to_string(vector.z());

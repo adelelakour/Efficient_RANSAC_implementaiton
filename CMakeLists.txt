@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(PCL 1.13 REQUIRED)
-find_package(AndreiUtils REQUIRED core)
+#find_package(AndreiUtils REQUIRED core)
 
 include_directories(${PCL_INCLUDE_DIRS})
 

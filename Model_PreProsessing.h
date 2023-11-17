@@ -38,6 +38,7 @@ typedef std::vector<Element_in_Cell> WholeCell;
 typedef std::unordered_map<std::string, std::vector<PAIR>> Cell;
 typedef std::unordered_map<std::string, Cell> HashMap;
 
+
 namespace std {
     template<>
     struct hash<Eigen::Vector3f> {
