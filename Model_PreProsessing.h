@@ -35,11 +35,19 @@ typedef std::pair<pcl::PointXYZLNormal, pcl::PointXYZLNormal> PAIR;
 typedef std::tuple <PAIR, std::string> Element_in_Cell;
 typedef std::vector<Element_in_Cell> WholeCell;
 
+typedef std::unordered_map<std::string, std::vector<PAIR>> Cell;
+typedef std::unordered_map<std::string, Cell> HashMap;
 
 namespace std {
     template<>
     struct hash<Eigen::Vector3f> {
-        std::size_t operator()(const Eigen::Vector3f &vec) const;
+        std::size_t operator()(const Eigen::Vector3f &vec) const {
+            // Combine the hashes of individual components of the Eigen::Vector3f
+            size_t hash = std::hash<double>{}(vec.x());
+            hash ^= std::hash<double>{}(vec.y()) + 0x9e3779b9 + (hash << 6) + (hash >> 2);
+            hash ^= std::hash<double>{}(vec.z()) + 0x9e3779b9 + (hash << 6) + (hash >> 2);
+            return hash;
+        }
     };
 }
 
@@ -48,7 +56,7 @@ double Euclidean_Distance_two_Vectors(Eigen::Vector3f A, Eigen::Vector3f B);
 Eigen::Vector3f U_sub_V(Eigen::Vector3f A, Eigen::Vector3f B);
 Eigen::Vector3f V_sub_U(Eigen::Vector3f A, Eigen::Vector3f B);
 
-std::unordered_map<Eigen::Vector3f, WholeCell> Compute_HashTable();
+HashMap Compute_HashTable(float radius = 0.01, double pointSphereRelativeTolerance = 0.01);
 
 #endif // MY_HEADER_H
 

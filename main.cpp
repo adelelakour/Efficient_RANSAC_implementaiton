@@ -8,6 +8,7 @@
 #include <list>
 #include<tuple>
 #include <string>
+#include <chrono>
 
 #include <pcl/common/distances.h>
 
@@ -29,10 +30,17 @@
 typedef std::vector<Eigen::Matrix4f> RigidTransformation;
 
 
-int main()
-{
+int main() {
+    auto start = std::chrono::high_resolution_clock::now();
 
-    auto Offline_HashTable = Compute_HashTable();
+    HashMap Offline_HashTable = Compute_HashTable();
+
+    auto end = std::chrono::high_resolution_clock::now();
+
+    std::chrono::duration<double> duration = end - start;
+
+    std::cout << "Execution time: " << duration.count() << " seconds" << std::endl;
+
 
     /*
     // all variables here
