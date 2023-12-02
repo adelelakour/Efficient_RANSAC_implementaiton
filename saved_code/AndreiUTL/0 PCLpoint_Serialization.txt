@@ -1,0 +1,81 @@
+#include "AndreiUtils/utilsBinarySerialization.hpp"
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <unordered_map>
+#include <pcl/common/distances.h>
+#include <pcl/io/ply_io.h>
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/filters/voxel_grid.h>
+#include <pcl/kdtree/kdtree.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/features/shot_omp.h>
+#include <pcl/features/fpfh_omp.h>
+#include <pcl/common/transforms.h>
+#include <pcl/segmentation/segment_differences.h>
+#include <pcl/registration/correspondence_estimation.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/octree/octree_search.h>
+
+typedef pcl::PointXYZLNormal OnePoint;
+typedef std::pair<pcl::PointXYZLNormal, pcl::PointXYZLNormal> One_PAIR;
+typedef std::vector<std::pair<pcl::PointXYZLNormal, pcl::PointXYZLNormal>> Vec_of_Pairs;
+typedef std::unordered_map<std::string, Vec_of_Pairs> InnerMap;
+typedef std::unordered_map<std::string, InnerMap> OuterMap;
+
+namespace AndreiUtils {
+
+    void serialize(std::ofstream &OUT, pcl::PointXYZLNormal PCL_point) {
+        serialize(OUT, PCL_point.x);
+        serialize(OUT, PCL_point.y);
+        serialize(OUT, PCL_point.z);
+        serialize(OUT, PCL_point.label);
+        serialize(OUT, PCL_point.normal_x);
+        serialize(OUT, PCL_point.normal_y);
+        serialize(OUT, PCL_point.normal_z);
+        serialize(OUT, PCL_point.curvature);
+
+    }
+
+
+    void deserialize(std::ifstream &IN, pcl::PointXYZLNormal &PClPoint) {
+        deserialize(IN, PClPoint.x);
+        deserialize(IN, PClPoint.y);
+        deserialize(IN, PClPoint.z);
+        deserialize(IN, PClPoint.label);
+        deserialize(IN, PClPoint.normal_x);
+        deserialize(IN, PClPoint.normal_y);
+        deserialize(IN, PClPoint.normal_z);
+        deserialize(IN, PClPoint.curvature);
+
+    }
+
+ 
+}
+
+int main() {
+
+    pcl::PointXYZLNormal P1 = {2.3, 3.5, 2.9, 3, 4.9, 6.8, 4.7, 6.0};
+
+    std::ofstream OUT ("PCLpoint_Vector_of_PAIR_Serialization.bin", std::ios::binary);
+
+    if (!OUT.is_open()) {
+        std::cerr << "Error opening file for writing!" << std::endl;
+        return 1;
+    }
+
+    AndreiUtils::serialize(OUT, P1);
+    OUT.close();
+
+    pcl::PointXYZLNormal P1_retrieved;
+    std::ifstream IN ("PCLpoint_Vector_of_PAIR_Serialization.bin", std::ios::binary);
+    AndreiUtils::deserialize(IN, P1_retrieved);
+    IN.close();
+
+
+    std::cout << P1_retrieved << std::endl;
+
+    return 0;
+}

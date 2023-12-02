@@ -1,0 +1,2 @@
+/usr/bin/ar qc libObjectModel.a CMakeFiles/ObjectModel.dir/Model_PreProsessing.cpp.o
+/usr/bin/ranlib libObjectModel.a

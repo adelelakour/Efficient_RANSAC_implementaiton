@@ -23,21 +23,20 @@
 #include <pcl/features/shot_omp.h>
 #include <pcl/features/fpfh_omp.h>
 #include <pcl/common/transforms.h>
-//#include <pcl/visualization/pcl_visualizer.h>
 #include <pcl/segmentation/segment_differences.h>
 #include <pcl/registration/correspondence_estimation.h>
+#include <AndreiUtils/utilsString.h>
 
-//#include <AndreiUtils/utilsString.h>
-//using namespace AndreiUtils;
+using namespace AndreiUtils;
 using namespace Eigen;
 using namespace std;
 namespace fs = std::filesystem;
 
-/*Eigen::Vector3f fromStringToVectorF(std::string const &vectorAsString) {
+Eigen::Vector3f fromStringToVectorF(std::string const &vectorAsString) {
     auto res = AndreiUtils::splitString(vectorAsString, ";");
     assert(res.size() == 3);
     return {std::stof(res[0]), std::stof(res[1]), std::stof(res[2])};
-}*/
+}
 
 std::vector<int> stringToVector(const std::string& str) {
     std::vector<int> vec;
@@ -54,11 +53,13 @@ std::string fromVectorToString(Eigen::Vector3d const &vector) {
     return std::to_string(vector.x()) + ";" + std::to_string(vector.y()) + ";" + std::to_string(vector.z());
 }
 
-/*Eigen::Vector3d fromStringToVectorD(std::string const &vectorAsString) {
+
+Eigen::Vector3d fromStringToVectorD(std::string const &vectorAsString) {
     auto res = AndreiUtils::splitString(vectorAsString, ";");
     assert(res.size() == 3);
     return {std::stod(res[0]), std::stod(res[1]), std::stod(res[2])};
-}*/
+}
+
 
 std::string fromVectorToString(Eigen::Vector3f const &vector) {
     return std::to_string(vector.x()) + ";" + std::to_string(vector.y()) + ";" + std::to_string(vector.z());
@@ -117,8 +118,8 @@ inline Eigen::Vector3f V_sub_U(Eigen::Vector3f A, Eigen::Vector3f B) {
 }
 
 
-HashMap Compute_HashTable(float radius, double pointSphereRelativeTolerance) {
-    HashMap myHashTable;       // Cell is a tuple of (pair) and (model Name)
+OuterMap Compute_HashTable(float radius, double pointSphereRelativeTolerance, std::string path_to_models) {
+    OuterMap myHashTable;       // Cell is a tuple of (pair) and (model Name)
     myHashTable.clear();
 
     pcl::PointCloud<pcl::PointXYZLNormal>::Ptr Model_Cloud(new pcl::PointCloud<pcl::PointXYZLNormal>);
@@ -131,15 +132,15 @@ HashMap Compute_HashTable(float radius, double pointSphereRelativeTolerance) {
     Eigen::Vector3f U_p = Eigen::Vector3f::Zero();
     Eigen::Vector3f V_p = Eigen::Vector3f::Zero();
 
-    PAIR Detected_pairs;
+    One_PAIR Detected_pairs;
     double pointDistance;
-    Cell OneCell;
+    InnerMap OneCell;
 
     std::vector<int> point_indices;
     std::vector<float> point_distances;
 
 
-    std::string directory_path = "../YCB_ply";
+    std::string directory_path = "../YCB_ply/Selected_two";
     std::string extension = ".ply";
     std::string Model_Name;
     std::string file_path;
@@ -208,7 +209,7 @@ HashMap Compute_HashTable(float radius, double pointSphereRelativeTolerance) {
                         findRequest->second[Model_Name].push_back(Detected_pairs);
                         // std::cout << "A new entry is added to existing key ++++++++++++++++++++++++++++:" << std::endl;
                     } else {
-                        Cell newData;
+                        InnerMap newData;
                         newData[Model_Name].push_back(Detected_pairs);
                         myHashTable[hashKeyString] = newData;
                         // std::cout << "A new key is added : " << Hash_key.transpose() << std::endl;
@@ -234,5 +235,6 @@ HashMap Compute_HashTable(float radius, double pointSphereRelativeTolerance) {
 
     return myHashTable;
 }
+
 
 

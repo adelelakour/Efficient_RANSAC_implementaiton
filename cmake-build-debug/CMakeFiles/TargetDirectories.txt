@@ -1,5 +1,4 @@
 /home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug/CMakeFiles/ObjectModel.dir
-/home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug/CMakeFiles/Effi_RANSAC_MA.dir
-/home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug/CMakeFiles/TestBla.dir
+/home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug/CMakeFiles/Cereal_version.dir
 /home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug/CMakeFiles/rebuild_cache.dir

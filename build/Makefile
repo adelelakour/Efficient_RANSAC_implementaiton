@@ -117,24 +117,61 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Effi_RANSAC_MA
+# Target rules for targets named ObjectModel
 
 # Build rule for target.
-Effi_RANSAC_MA: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Effi_RANSAC_MA
-.PHONY : Effi_RANSAC_MA
+ObjectModel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ObjectModel
+.PHONY : ObjectModel
 
 # fast build rule for target.
-Effi_RANSAC_MA/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Effi_RANSAC_MA.dir/build.make CMakeFiles/Effi_RANSAC_MA.dir/build
-.PHONY : Effi_RANSAC_MA/fast
+ObjectModel/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjectModel.dir/build.make CMakeFiles/ObjectModel.dir/build
+.PHONY : ObjectModel/fast
+
+#=============================================================================
+# Target rules for targets named Cereal_version
+
+# Build rule for target.
+Cereal_version: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Cereal_version
+.PHONY : Cereal_version
+
+# fast build rule for target.
+Cereal_version/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/build
+.PHONY : Cereal_version/fast
+
+Database.o: Database.cpp.o
+.PHONY : Database.o
+
+# target to build an object file
+Database.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/Database.cpp.o
+.PHONY : Database.cpp.o
+
+Database.i: Database.cpp.i
+.PHONY : Database.i
+
+# target to preprocess a source file
+Database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/Database.cpp.i
+.PHONY : Database.cpp.i
+
+Database.s: Database.cpp.s
+.PHONY : Database.s
+
+# target to generate assembly for a file
+Database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/Database.cpp.s
+.PHONY : Database.cpp.s
 
 Model_PreProsessing.o: Model_PreProsessing.cpp.o
 .PHONY : Model_PreProsessing.o
 
 # target to build an object file
 Model_PreProsessing.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Effi_RANSAC_MA.dir/build.make CMakeFiles/Effi_RANSAC_MA.dir/Model_PreProsessing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjectModel.dir/build.make CMakeFiles/ObjectModel.dir/Model_PreProsessing.cpp.o
 .PHONY : Model_PreProsessing.cpp.o
 
 Model_PreProsessing.i: Model_PreProsessing.cpp.i
@@ -142,7 +179,7 @@ Model_PreProsessing.i: Model_PreProsessing.cpp.i
 
 # target to preprocess a source file
 Model_PreProsessing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Effi_RANSAC_MA.dir/build.make CMakeFiles/Effi_RANSAC_MA.dir/Model_PreProsessing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjectModel.dir/build.make CMakeFiles/ObjectModel.dir/Model_PreProsessing.cpp.i
 .PHONY : Model_PreProsessing.cpp.i
 
 Model_PreProsessing.s: Model_PreProsessing.cpp.s
@@ -150,15 +187,39 @@ Model_PreProsessing.s: Model_PreProsessing.cpp.s
 
 # target to generate assembly for a file
 Model_PreProsessing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Effi_RANSAC_MA.dir/build.make CMakeFiles/Effi_RANSAC_MA.dir/Model_PreProsessing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjectModel.dir/build.make CMakeFiles/ObjectModel.dir/Model_PreProsessing.cpp.s
 .PHONY : Model_PreProsessing.cpp.s
+
+SerializeDeserialize.o: SerializeDeserialize.cpp.o
+.PHONY : SerializeDeserialize.o
+
+# target to build an object file
+SerializeDeserialize.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/SerializeDeserialize.cpp.o
+.PHONY : SerializeDeserialize.cpp.o
+
+SerializeDeserialize.i: SerializeDeserialize.cpp.i
+.PHONY : SerializeDeserialize.i
+
+# target to preprocess a source file
+SerializeDeserialize.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/SerializeDeserialize.cpp.i
+.PHONY : SerializeDeserialize.cpp.i
+
+SerializeDeserialize.s: SerializeDeserialize.cpp.s
+.PHONY : SerializeDeserialize.s
+
+# target to generate assembly for a file
+SerializeDeserialize.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/SerializeDeserialize.cpp.s
+.PHONY : SerializeDeserialize.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Effi_RANSAC_MA.dir/build.make CMakeFiles/Effi_RANSAC_MA.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -166,7 +227,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Effi_RANSAC_MA.dir/build.make CMakeFiles/Effi_RANSAC_MA.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,7 +235,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Effi_RANSAC_MA.dir/build.make CMakeFiles/Effi_RANSAC_MA.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cereal_version.dir/build.make CMakeFiles/Cereal_version.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -185,10 +246,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Effi_RANSAC_MA"
+	@echo "... Cereal_version"
+	@echo "... ObjectModel"
+	@echo "... Database.o"
+	@echo "... Database.i"
+	@echo "... Database.s"
 	@echo "... Model_PreProsessing.o"
 	@echo "... Model_PreProsessing.i"
 	@echo "... Model_PreProsessing.s"
+	@echo "... SerializeDeserialize.o"
+	@echo "... SerializeDeserialize.i"
+	@echo "... SerializeDeserialize.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

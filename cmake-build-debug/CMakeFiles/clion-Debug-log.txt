@@ -1,23 +1,5 @@
 /snap/clion/250/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/250/bin/ninja/linux/x64/ninja -G Ninja -S /home/adelelakour/CLionProjects/Efficient_RANSAC_implementation -B /home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug
--- The C compiler identification is GNU 13.1.0
--- The CXX compiler identification is GNU 11.4.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem iostreams serialization 
--- Checking for module 'flann'
---   Found flann, version 1.9.1
--- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
 -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
--- Found OpenMP_CXX: -fopenmp (found version "4.5") 
--- Found OpenMP: TRUE (found version "4.5") found components: CXX 
 -- The imported target "vtkParseOGLExt" references the file
    "/usr/bin/vtkParseOGLExt-7.1"
 but this file does not exist.  Possible reasons include:
@@ -54,51 +36,31 @@ but this file does not exist.  Possible reasons include:
    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
 but not all the files it references.
 
--- Found Pcap: /usr/lib/x86_64-linux-gnu/libpcap.so  
--- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11")  
--- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
 -- Checking for module 'libusb-1.0'
 --   No package 'libusb-1.0' found
 -- Could NOT find libusb (missing: libusb_LIBRARIES libusb_INCLUDE_DIR) 
 ** WARNING ** io features related to libusb will be disabled
 -- Found Qhull version 8.0.2
 -- looking for PCL_COMMON
--- Found PCL_COMMON: /usr/local/lib/libpcl_common.so  
 -- looking for PCL_KDTREE
--- Found PCL_KDTREE: /usr/local/lib/libpcl_kdtree.so  
 -- looking for PCL_OCTREE
--- Found PCL_OCTREE: /usr/local/lib/libpcl_octree.so  
 -- looking for PCL_SEARCH
--- Found PCL_SEARCH: /usr/local/lib/libpcl_search.so  
 -- looking for PCL_SAMPLE_CONSENSUS
--- Found PCL_SAMPLE_CONSENSUS: /usr/local/lib/libpcl_sample_consensus.so  
 -- looking for PCL_FILTERS
--- Found PCL_FILTERS: /usr/local/lib/libpcl_filters.so  
 -- looking for PCL_2D
--- Found PCL_2D: /usr/local/include/pcl-1.13  
 -- looking for PCL_GEOMETRY
--- Found PCL_GEOMETRY: /usr/local/include/pcl-1.13  
 -- looking for PCL_IO
--- Found PCL_IO: /usr/local/lib/libpcl_io.so  
 -- looking for PCL_FEATURES
--- Found PCL_FEATURES: /usr/local/lib/libpcl_features.so  
 -- looking for PCL_ML
--- Found PCL_ML: /usr/local/lib/libpcl_ml.so  
 -- looking for PCL_SEGMENTATION
--- Found PCL_SEGMENTATION: /usr/local/lib/libpcl_segmentation.so  
 -- looking for PCL_SURFACE
--- Found PCL_SURFACE: /usr/local/lib/libpcl_surface.so  
 -- looking for PCL_REGISTRATION
--- Found PCL_REGISTRATION: /usr/local/lib/libpcl_registration.so  
 -- looking for PCL_KEYPOINTS
--- Found PCL_KEYPOINTS: /usr/local/lib/libpcl_keypoints.so  
 -- looking for PCL_TRACKING
--- Found PCL_TRACKING: /usr/local/lib/libpcl_tracking.so  
 -- looking for PCL_RECOGNITION
--- Found PCL_RECOGNITION: /usr/local/lib/libpcl_recognition.so  
 -- looking for PCL_STEREO
--- Found PCL_STEREO: /usr/local/lib/libpcl_stereo.so  
--- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;Boost::system;Boost::filesystem;Boost::iostreams;Boost::serialization;vtkChartsCore;vtkCommonColor;vtkCommonCore;vtksys;vtkCommonDataModel;vtkCommonMath;vtkCommonMisc;vtkCommonSystem;vtkCommonTransforms;vtkCommonExecutionModel;vtkFiltersGeneral;vtkCommonComputationalGeometry;vtkFiltersCore;vtkInfovisCore;vtkFiltersExtraction;vtkFiltersStatistics;vtkImagingFourier;vtkImagingCore;vtkalglib;vtkRenderingContext2D;vtkRenderingCore;vtkFiltersGeometry;vtkFiltersSources;vtkRenderingFreeType;/usr/lib/x86_64-linux-gnu/libfreetype.so;/usr/lib/x86_64-linux-gnu/libz.so;vtkFiltersModeling;vtkImagingSources;vtkInteractionImage;vtkImagingColor;vtkInteractionStyle;vtkInteractionWidgets;vtkFiltersHybrid;vtkImagingGeneral;vtkImagingHybrid;vtkIOImage;vtkDICOMParser;vtkmetaio;/usr/lib/x86_64-linux-gnu/libjpeg.so;/usr/lib/x86_64-linux-gnu/libpng.so;/usr/lib/x86_64-linux-gnu/libtiff.so;vtkRenderingAnnotation;vtkRenderingVolume;vtkIOXML;vtkIOCore;vtkIOXMLParser;/usr/lib/x86_64-linux-gnu/libexpat.so;vtkIOGeometry;vtkIOLegacy;vtkIOPLY;vtkRenderingLOD;vtkViewsCore;vtkViewsContext2D;vtkRenderingOpenGL2;vtkRenderingContextOpenGL2;FLANN::FLANN;QHULL::QHULL (Required is at least version "1.13") 
--- Configuring done (0.6s)
+AndreiUtils requested components: core
+-- PCL_INCLUDE_DIRS: /usr/local/include/pcl-1.13;/usr/include/eigen3;/usr/include;/usr/include/vtk-7.1;/usr/include/freetype2;/usr/include/x86_64-linux-gnu
+-- Configuring done (0.3s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/adelelakour/CLionProjects/Efficient_RANSAC_implementation/cmake-build-debug

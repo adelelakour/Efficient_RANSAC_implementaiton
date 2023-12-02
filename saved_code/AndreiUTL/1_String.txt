@@ -1,0 +1,24 @@
+
+    void serialize(std::ofstream &out, const std::string &data) {
+        
+        size_t length = data.size();
+        serialize(out, length);
+
+
+        out.write(data.data(), length);
+    }
+
+
+
+    void deserialize(std::ifstream &in, std::string &data) {
+
+        size_t length;
+        deserialize(in, length);
+
+
+        data.resize(length);
+        in.read(data.data(), length);
+        if (in.fail()) {
+            throw std::runtime_error("Deserializing string data failed!");
+        }
+    }

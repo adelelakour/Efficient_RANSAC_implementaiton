@@ -1,0 +1,124 @@
+
+#include "AndreiUtils/utilsBinarySerialization.hpp"
+#include "Model_PreProsessing.h"
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <unordered_map>
+#include <pcl/common/distances.h>
+#include <pcl/io/ply_io.h>
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/filters/voxel_grid.h>
+#include <pcl/kdtree/kdtree.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/features/shot_omp.h>
+#include <pcl/features/fpfh_omp.h>
+#include <pcl/common/transforms.h>
+#include <pcl/segmentation/segment_differences.h>
+#include <pcl/registration/correspondence_estimation.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/octree/octree_search.h>
+
+
+
+namespace AndreiUtils {
+
+
+    void serialize(std::ofstream &out, const std::string &data) {
+        // Serialize the length of the string first
+        size_t length = data.size();
+        serialize(out, length);
+
+        // Serialize the characters of the string
+        out.write(data.data(), length);
+    }
+
+
+
+    void deserialize(std::ifstream &in, std::string &data) {
+        // Deserialize the length of the string first
+        size_t length;
+        deserialize(in, length);
+
+        // Resize the string and read the characters
+        data.resize(length);
+        in.read(data.data(), length);
+        if (in.fail()) {
+            throw std::runtime_error("Deserializing string data failed!");
+        }
+    }
+
+
+    void serialize(std::ofstream &OUT, std::unordered_map<std::string, int> map_str_int) {
+        size_t size_of_map_str_int = map_str_int.size();
+        serialize(OUT, size_of_map_str_int); // Serialize the size of the vector
+
+        for (const auto &S : map_str_int)
+        {
+            serialize(OUT, S.first);
+            serialize(OUT, S.second);
+        }
+    }
+
+
+
+    void deserialize(std::ifstream &IN, std::unordered_map<std::string, int> &map_str_int) {
+        size_t size_of_map_str_int{0};
+        deserialize(IN, size_of_map_str_int); // Serialize the size of the vector
+
+        std::string key;
+        int value;
+        for (int i = 0; i < size_of_map_str_int; ++i)
+        {
+            deserialize(IN, key);
+            deserialize(IN, value);
+            map_str_int[key] = value; // Populate the map
+
+        }
+    }
+
+
+}
+
+
+
+int main() {
+
+    std::unordered_map<std::string, int> Map_To_sent;
+    std::unordered_map<std::string, int> Map_To_retrieve;
+
+    Map_To_sent["Adel Elakour"] = 31;
+    Map_To_sent["Mischo Golden"] = 4;
+
+
+    std::ofstream OUT("vec_of_string.bin", std::ios::binary);
+    if (OUT.is_open())
+    {
+        AndreiUtils::serialize(OUT, Map_To_sent);
+    } else
+    {
+        std::cout << "cant open the file" << std::endl;
+    }
+    OUT.close();
+
+    std::ifstream IN ("vec_of_string.bin", std::ios::binary);
+    if (IN.is_open())
+    {
+        AndreiUtils::deserialize(IN, Map_To_retrieve);
+    }
+    IN.close();
+
+
+
+    for (auto S : Map_To_retrieve)
+    {
+        std::cout << S.first << " " << S.second << std::endl;
+    }
+
+
+
+    return 0;
+}
+

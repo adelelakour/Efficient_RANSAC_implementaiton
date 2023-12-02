@@ -1,0 +1,165 @@
+#include "AndreiUtils/utilsBinarySerialization.hpp"
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <unordered_map>
+#include <pcl/common/distances.h>
+#include <pcl/io/ply_io.h>
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/filters/voxel_grid.h>
+#include <pcl/kdtree/kdtree.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/features/shot_omp.h>
+#include <pcl/features/fpfh_omp.h>
+#include <pcl/common/transforms.h>
+#include <pcl/segmentation/segment_differences.h>
+#include <pcl/registration/correspondence_estimation.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/octree/octree_search.h>
+
+typedef pcl::PointXYZLNormal OnePoint;
+typedef std::pair<pcl::PointXYZLNormal, pcl::PointXYZLNormal> One_PAIR;
+typedef std::vector<std::pair<pcl::PointXYZLNormal, pcl::PointXYZLNormal>> Vec_of_Pairs;
+typedef std::unordered_map<std::string, Vec_of_Pairs> InnerMap;
+typedef std::unordered_map<std::string, InnerMap> OuterMap;
+
+namespace AndreiUtils {
+
+    void serialize(std::ofstream &OUT, pcl::PointXYZLNormal PCL_point) {
+        serialize(OUT, PCL_point.x);
+        serialize(OUT, PCL_point.y);
+        serialize(OUT, PCL_point.z);
+        serialize(OUT, PCL_point.label);
+        serialize(OUT, PCL_point.normal_x);
+        serialize(OUT, PCL_point.normal_y);
+        serialize(OUT, PCL_point.normal_z);
+        serialize(OUT, PCL_point.curvature);
+
+    }
+
+
+    void deserialize(std::ifstream &IN, pcl::PointXYZLNormal &PClPoint) {
+        deserialize(IN, PClPoint.x);
+        deserialize(IN, PClPoint.y);
+        deserialize(IN, PClPoint.z);
+        deserialize(IN, PClPoint.label);
+        deserialize(IN, PClPoint.normal_x);
+        deserialize(IN, PClPoint.normal_y);
+        deserialize(IN, PClPoint.normal_z);
+        deserialize(IN, PClPoint.curvature);
+
+    }
+
+    void serialize(std::ofstream &out, const std::string &data) {
+
+        size_t length = data.size();
+        serialize(out, length);
+
+        out.write(data.data(), length);
+    }
+
+
+
+    void deserialize(std::ifstream &in, std::string &data) {
+
+        size_t length;
+        deserialize(in, length);
+
+
+        data.resize(length);
+        in.read(data.data(), length);
+        if (in.fail()) {
+            throw std::runtime_error("Deserializing string data failed!");
+        }
+    }
+
+
+
+    void serialize(std::ofstream &OUT, const std::unordered_map<std::string, std::vector <std::pair<int, int>>> map) {
+        size_t size = map.size();
+        serialize(OUT, size);
+
+        for (const auto &entry : map) {
+            serialize(OUT, entry.first); // Serialize the string key
+            serialize(OUT, entry.second.size());   // serialize the size of the vector
+            for (auto P : entry.second)
+            {
+                serialize(OUT, P.first);
+                serialize(OUT, P.second);
+            }
+        }
+    }
+
+
+    void deserialize(std::ifstream &IN, std::unordered_map<std::string, std::vector <std::pair<int, int>>> &map) {
+        size_t map_size;     // I use it in outer loop
+        deserialize(IN, map_size);
+
+        map.clear();
+        std::string key;
+        int num1{0}, num2{0};
+        std::pair<int, int> myPair;
+
+        std::vector<std::pair<int, int>> value;
+        int vec_size{0};
+
+        for (size_t i = 0; i < map_size; ++i) {
+            deserialize(IN, key);        // Deserialize the string
+            deserialize(IN, vec_size);
+            value.clear();
+            for (size_t i = 0; i < vec_size; ++i)
+            {
+                deserialize(IN, num1);
+                deserialize(IN, num2);
+            }
+            value.push_back(std::make_pair(num1, num2));
+        }
+        map[key] = value;
+
+    }
+
+
+}
+
+
+
+
+int main() {
+
+
+
+    std::unordered_map<std::string, std::vector <std::pair<int, int>>> myMap;
+    std::unordered_map<std::string, std::vector <std::pair<int, int>>> myMap_RET;
+
+    std::vector<std::pair<int, int>> V1;
+    V1.push_back(std::make_pair(1,5));
+    V1.push_back(std::make_pair(4,9));
+
+    myMap["Adel"] = V1;
+    myMap["Elakour"] = V1;
+
+
+    std::ofstream OUT ("PCLpoint_Vector_of_PAIR_Serialization.bin", std::ios::binary);
+
+    if (!OUT.is_open()) {
+        std::cerr << "Error opening file for writing!" << std::endl;
+        return 1;
+    }
+
+    AndreiUtils::serialize(OUT, myMap);
+    OUT.close();
+
+    // std::vector <One_PAIR> retrieved_v_of_pairs;
+    // pcl::PointXYZLNormal P1_retrieved;
+    std::vector <One_PAIR> v_of_pairs_RETRIEVED;
+
+    std::ifstream IN ("PCLpoint_Vector_of_PAIR_Serialization.bin", std::ios::binary);
+    AndreiUtils::deserialize(IN, myMap_RET);
+    IN.close();
+
+
+
+    return 0;
+}
